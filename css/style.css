@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*Importation polices de caractères*/
+/*Déclaration des couleurs*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 375px;
+  background: #ffffff;
+  margin: auto;
+  font-size: 1em;
+}
+
+img {
+  width: 100%;
+}
+
+/*HEADER*/
+header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header img {
+  width: 44%;
+}
+
+/*Section présentation*/
+.presentation {
+  height: 335px;
+  background: #f6f6f6;
+}
+.presentation__lieu {
+  height: 50px;
+  width: 100%;
+  background: #eaeaea;
+}
+
+/*# sourceMappingURL=style.css.map */

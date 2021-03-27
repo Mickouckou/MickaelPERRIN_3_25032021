@@ -1,0 +1,19 @@
+{
+  "name": "mickaelperrin_3_25032021",
+  "version": "1.0.0",
+  "description": "Projet 3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/sassindex.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mickouckou/MickaelPERRIN_3_25032021.git"
+  },
+  "author": "Mickaël PERRIN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mickouckou/MickaelPERRIN_3_25032021/issues"
+  },
+  "homepage": "https://github.com/Mickouckou/MickaelPERRIN_3_25032021#readme"
+}
