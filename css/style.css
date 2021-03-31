@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*Importation polices de caractères*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
 /*Déclaration des couleurs*/
 * {
   margin: 0;
@@ -10,11 +11,23 @@
   width: 375px;
   background: #ffffff;
   margin: auto;
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
 }
 
 img {
   width: 100%;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #000000;
+}
+
+footer > *, .restaurants > * {
+  margin-left: 5.33%;
+  margin-right: 5.33%;
 }
 
 /*HEADER*/
@@ -23,20 +36,201 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 4px 3px 0px #cecece;
 }
 header img {
   width: 44%;
 }
 
+.lieu {
+  height: 46px;
+  width: 100%;
+  margin-top: 4px;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lieu i, .lieu span {
+  margin: 3%;
+}
+
 /*Section présentation*/
 .presentation {
-  height: 335px;
+  height: 285px;
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.presentation h2, .presentation p, .presentation button {
+  margin-right: 6%;
+  margin-left: 6%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.presentation button {
+  border-radius: 25px;
+  border: 0;
+  padding: 5%;
+  font-weight: bold;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  color: #ffffff;
+  box-shadow: 2px 2px 8px grey;
+}
+
+/*Section Fonctionnement*/
+.fonctionnement {
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+.fonctionnement > * {
+  margin-left: 5.33%;
+  margin-right: 5.33%;
+}
+.fonctionnement h2 {
+  margin-top: 11.36%;
+  margin-bottom: 4.66%;
+}
+.fonctionnement div {
+  margin-top: 2.8%;
+  margin-bottom: 2.8%;
+  margin-left: 8.8%;
+  height: 16.59%;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 2px 2px 8px lightgrey;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fonctionnement div .nb {
+  position: relative;
+  left: -3.6%;
+  border: 0;
+  border-radius: 25px;
+  padding-left: 2.2%;
+  padding-right: 2.2%;
+  padding-bottom: 1.05%;
+  padding-top: 1.05%;
+  background: #9356dc;
+  color: #ffffff;
+}
+.fonctionnement div i {
+  position: relative;
+  left: 4%;
+}
+.fonctionnement div .desc {
+  position: relative;
+  left: 10%;
+}
+.fonctionnement div:hover {
+  background: #f5edff;
+}
+.fonctionnement div:hover i {
+  color: #9356dc;
+}
+
+/*Section cartes restaurants*/
+main {
+  height: 1225px;
   background: #f6f6f6;
 }
-.presentation__lieu {
-  height: 50px;
-  width: 100%;
-  background: #eaeaea;
+
+.restaurants {
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.restaurants h2 {
+  margin-bottom: 25px;
+}
+.restaurants figure {
+  background: #ffffff;
+  border-radius: 25px;
+  height: 250px;
+  margin-bottom: 15px;
+  box-shadow: 4px 4px 20px #ccc;
+}
+.restaurants img {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: 70%;
+  object-fit: cover;
+}
+.restaurants .divfig {
+  height: 30%;
+  margin-right: 5.2%;
+  margin-left: 5.2%;
+  margin-top: 16px;
+  font-size: 0.9em;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.restaurants .divfig__desc {
+  order: 1;
+  flex-basis: 250px;
+}
+.restaurants .divfig__coeur {
+  font-size: 1.3em;
+}
+.restaurants .nouveau {
+  background: #99e2d0;
+  width: 23.88%;
+  height: 12%;
+  position: relative;
+  right: -72%;
+  margin-top: -76%;
+  border-radius: 5px;
+  color: #008766;
+  /*font-weight: bold;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*FOOTER*/
+footer {
+  background: #353535;
+  height: 195px;
+}
+footer h2 {
+  padding-top: 25px;
+  margin-bottom: 20px;
+  font-family: Shrikhand;
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+footer .footer {
+  color: #ffffff;
+}
+footer ul {
+  list-style: none;
+  padding: 0px;
+}
+footer li {
+  margin-bottom: 10px;
+}
+footer i {
+  width: 1em;
+}
+footer span {
+  position: relative;
+  margin-left: 3%;
+}
+footer a {
+  color: #ffffff;
+}
+footer a:link, footer a:visited {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */
