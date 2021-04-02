@@ -1,0 +1,68 @@
+/*Règles communes à toutes les pages*/
+*{
+    margin:0; padding:0;
+    }
+.container {
+    width: 375px;
+    background:$couleurblanc;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size:1em;
+    }
+img{
+    width: 100%;
+    }
+a{
+    outline: none;
+    text-decoration: none;
+    color: #000000;
+    }
+footer>*, .restaurants, .mainmenu>div, .secmenu>h2{
+    margin-left: 5.33%; margin-right: 5.33%;
+    }
+button{
+    border-radius: 25px; border:0;
+    padding:5%;
+    width:57.87%;
+    font-weight: bold;
+    background: linear-gradient(to bottom right, $couleursec, $couleurpri);
+    color: $couleurblanc;
+    box-shadow: 2px 2px 8px grey;
+    cursor:pointer;
+    }
+
+/*FOOTER*/
+footer{
+    background:#353535;
+    height:195px;
+    h2{
+        padding-top: 25px; margin-bottom: 20px;
+        font-family: Shrikhand;
+        font-weight: normal;
+        font-size:1.1em;
+        color: $couleurblanc;
+        }
+    .footer{
+        color:$couleurblanc;
+        }
+    ul{
+        list-style:none;
+        padding: 0px;
+        }
+    li{
+        margin-bottom: 10px;
+        }
+    i{
+        width:1em;
+        }
+    span{
+        position: relative;
+        margin-left: 3%;
+        }
+    a {
+        color: $couleurblanc;
+        }
+    a:link, & a:visited {
+        color: $couleurblanc;
+        }
+    }

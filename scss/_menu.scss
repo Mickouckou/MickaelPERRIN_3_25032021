@@ -1,0 +1,77 @@
+.header{
+    box-shadow: none;
+    a {
+        position: relative;
+        left:-21.33%;
+        }
+    }
+.imgmenu{
+    height:255px;
+    position: relative;
+    z-index: 1;
+    }
+
+/*Section principale détail des menus*/
+.mainmenu{
+    border-top-left-radius: 30px; border-top-right-radius: 30px;
+    margin-top: -35px; padding-top: 35px;
+    height:auto;
+    position: relative;
+    z-index: 2;
+    h1{
+        font-family: Shrikhand;
+        font-size: 1.7em;
+        font-weight: normal;
+        }
+    >div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            font-size: 1.6em;
+            }
+        }
+    .divbutton{
+        justify-content: center;
+        margin-top: 50px; padding-bottom: 50px;
+        }
+    }
+
+/*Détail d'une section de la carte ENTREES PLATS DESSERTS*/
+.secmenu{
+    h2{
+        margin-top: 40px; margin-bottom: 7.5px;
+        font-size: 1em;
+        font-weight: normal;
+        padding-bottom: 8px;
+        width:2.5em;
+        border-bottom: 3px solid $couleurter;
+        }
+    div{
+        margin-left: 4%; margin-right: 4%; margin-top: 15px;
+        width:92%; height:68px;
+        background:$couleurblanc;
+        border-radius: 25px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: center;
+        >*{
+            margin-left: 4%; margin-right: 4%;
+            }
+        h3{
+            font-size: 1em;
+            width:92%;
+            }
+        p{
+            font-size: 0.9em;
+            }
+        .prix{
+            font-weight: bold;
+            width:7%;
+            }
+        } 
+    }
+/*.entrees{
+    background: $couleurpri;
+    }*/
