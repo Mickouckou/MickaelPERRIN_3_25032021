@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*Importation polices de caractères*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
+/*Importation des variables*/
 /*Déclaration des couleurs*/
 /*Importation des parties communes*/
 /*Règles communes à toutes les pages*/
@@ -10,7 +11,9 @@
 }
 
 .container {
-  width: 375px;
+  /*width: 375px;*/
+  min-width: 300px;
+  max-width: 767px;
   background: #ffffff;
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -32,18 +35,79 @@ footer > *, .restaurants, .mainmenu > div, .secmenu > h2 {
   margin-right: 5.33%;
 }
 
+/*Boutons et leur animation*/
 button {
   border-radius: 25px;
   border: 0;
-  padding: 5%;
+  padding: 4%;
   width: 57.87%;
   font-weight: bold;
+  font-size: 1.1em;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: #ffffff;
+  position: relative;
+  z-index: 1;
   box-shadow: 2px 2px 8px grey;
   cursor: pointer;
 }
+button:hover {
+  border-radius: 25px;
+}
+button:hover::after {
+  border-radius: 25px;
+  opacity: 1;
+}
+button::after {
+  border-radius: 25px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #ff98e2 0%, #a36fe1 100%);
+  box-shadow: 10px 10px 10px grey;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
 
+/*Animation des coeurs*/
+.far {
+  position: relative;
+  z-index: 1;
+}
+.far:hover {
+  color: transparent;
+}
+.far:hover .fas {
+  opacity: 1;
+}
+.far .fas {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: -webkit-linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 500ms;
+}
+
+/*input:checked + label {
+    background:-webkit-linear-gradient($couleurpri, $couleursec);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    & .fas {
+        opacity: 1;
+        }
+    }*/
 /*FOOTER*/
 footer {
   background: #353535;
@@ -124,8 +188,8 @@ header img {
 .presentation h2, .presentation p, .presentation button {
   margin-right: 6%;
   margin-left: 6%;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  margin-top: 8.5px;
+  margin-bottom: 8.5px;
 }
 
 /*Section Fonctionnement*/
@@ -139,14 +203,14 @@ header img {
   margin-right: 5.33%;
 }
 .fonctionnement h2 {
-  margin-top: 11.36%;
-  margin-bottom: 4.66%;
+  margin-top: 51px;
+  margin-bottom: 21px;
 }
 .fonctionnement div {
-  margin-top: 2.8%;
-  margin-bottom: 2.8%;
+  margin-top: 13px;
+  margin-bottom: 13px;
   margin-left: 8.8%;
-  height: 16.59%;
+  height: 75px;
   border-radius: 25px;
   border: 0;
   box-shadow: 2px 2px 8px lightgrey;
@@ -176,7 +240,7 @@ header img {
   left: 10%;
 }
 .fonctionnement div:hover {
-  background: #f5edff;
+  background: #f2eafb;
 }
 .fonctionnement div:hover i {
   color: #9356dc;
@@ -203,6 +267,7 @@ main {
   height: 250px;
   margin-bottom: 15px;
   box-shadow: 4px 4px 20px #ccc;
+  cursor: pointer;
 }
 .restaurants img {
   border-top-left-radius: 25px;
@@ -214,7 +279,6 @@ main {
   height: 30%;
   margin-right: 5.2%;
   margin-left: 5.2%;
-  /*margin-top: 16px;*/
   font-size: 0.9em;
   display: flex;
   flex-flow: row wrap;
@@ -223,14 +287,11 @@ main {
 }
 .restaurants .divfig h3 {
   margin-top: 16px;
+  flex-basis: 80%;
 }
 .restaurants .divfig__desc {
   order: 1;
-  flex-basis: 250px;
-}
-.restaurants .divfig__coeur {
-  margin-top: 16px;
-  font-size: 1.4em;
+  flex-basis: 80%;
 }
 .restaurants .nouveau {
   background: #99e2d0;
@@ -238,12 +299,24 @@ main {
   height: 12%;
   position: relative;
   right: -72%;
-  margin-top: -240px;
+  margin-top: -210px;
   border-radius: 5px;
-  color: #008766;
+  color: #278870;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*Positionnement des coeurs*/
+/*input {
+    position: absolute;
+    left: -9999px;
+    }*/
+.coeur {
+  margin-top: -58px;
+  margin-left: 89.6%;
+  font-size: 1.6em;
+  font-weight: normal;
 }
 
 /*Importation de scss des pages de menu*/
@@ -326,11 +399,33 @@ main {
 }
 .secmenu div .prix {
   font-weight: bold;
+  text-align: end;
   width: 7%;
 }
 
-/*.entrees{
-    background: $couleurpri;
-    }*/
+@keyframes transition {
+  0% {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 15px;
+    opacity: 1;
+  }
+}
+.entrees div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 0.5s forwards;
+}
+
+.plats div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 1.5s forwards;
+}
+
+.desserts div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 2.5s forwards;
+}
 
 /*# sourceMappingURL=style.css.map */

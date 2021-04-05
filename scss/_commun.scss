@@ -3,7 +3,9 @@
     margin:0; padding:0;
     }
 .container {
-    width: 375px;
+    /*width: 375px;*/
+    min-width: 300px;
+    max-width: 767px;
     background:$couleurblanc;
     margin: auto;
     font-family: 'Roboto', sans-serif;
@@ -20,16 +22,78 @@ a{
 footer>*, .restaurants, .mainmenu>div, .secmenu>h2{
     margin-left: 5.33%; margin-right: 5.33%;
     }
+
+/*Boutons et leur animation*/
 button{
     border-radius: 25px; border:0;
-    padding:5%;
+    padding:4%;
     width:57.87%;
     font-weight: bold;
+    font-size: 1.1em;
     background: linear-gradient(to bottom right, $couleursec, $couleurpri);
     color: $couleurblanc;
+    position: relative;
+    z-index: 1;
     box-shadow: 2px 2px 8px grey;
     cursor:pointer;
+    &:hover {
+        border-radius: 25px;
+        &::after {
+            border-radius: 25px;
+            opacity: 1;
+            }
+        }
+    &::after {
+        border-radius: 25px;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom right, lighten($couleursec, 6) 0%, lighten($couleurpri, 6) 100%);
+        box-shadow: 10px 10px 10px grey;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+        }
     }
+
+/*Animation des coeurs*/
+.far{
+    position: relative;
+    z-index: 1;
+    &:hover {
+        color:transparent;
+        & .fas {
+            opacity: 1;
+            }
+        }
+    & .fas {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;  
+        left: 0;
+        background:-webkit-linear-gradient($couleurpri, $couleursec);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 500ms;
+        }
+    }
+/*input:checked + label {
+    background:-webkit-linear-gradient($couleurpri, $couleursec);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    & .fas {
+        opacity: 1;
+        }
+    }*/
 
 /*FOOTER*/
 footer{
