@@ -3,6 +3,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
 /*Importation des variables*/
 /*Déclaration des couleurs*/
+/*Importation des keyframes*/
+/*Keyframes*/
+/*Barre de chargement*/
+@keyframes chargement {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+    animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  }
+  46% {
+    transform: scaleX(0.81);
+    animation-timing-function: cubic-bezier(0.25, 0, 0.25, 1);
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+/*Apparition du site*/
+@keyframes containerindex {
+  0% {
+    transform: translateX(-9999px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/*Apparition des plats*/
+@keyframes transition {
+  0% {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 15px;
+    opacity: 1;
+  }
+}
+.entrees > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 0.5s forwards;
+}
+
+.plats > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 1.5s forwards;
+}
+
+.desserts > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 2.5s forwards;
+}
+
+/*Apparition de la coche verte si on survole un plat*/
+@keyframes cocheverte {
+  0% {
+    transform: scaleX(0);
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scaleX(1);
+    width: 16.5%;
+    opacity: 1;
+  }
+}
 /*Importation des parties communes*/
 /*Règles communes à toutes les pages*/
 * {
@@ -11,10 +87,10 @@
 }
 
 .container {
-  /*width: 375px;*/
+  background: #ffffff;
   min-width: 300px;
   max-width: 767px;
-  background: #ffffff;
+  width: 100%;
   margin: auto;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
@@ -91,23 +167,16 @@ button::after {
   bottom: 0;
   left: 0;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
-  background-clip: text;
+  -moz-background-clip: text;
   -webkit-background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
   color: transparent;
   opacity: 0;
   z-index: -1;
   transition: opacity 500ms;
 }
 
-/*input:checked + label {
-    background:-webkit-linear-gradient($couleurpri, $couleursec);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-    & .fas {
-        opacity: 1;
-        }
-    }*/
 /*FOOTER*/
 footer {
   background: #353535;
@@ -147,6 +216,34 @@ footer a:link, footer a:visited {
 
 /*Importation du scss de la page index*/
 /*Fichier SASS pour la page index.html*/
+/*Loading Spinner*/
+.barre {
+  height: 100px;
+  width: 95%;
+  margin-top: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+  border: 4px solid #ff79da;
+  background: #99e2d0;
+  position: absolute;
+  z-index: -1000;
+}
+.barre__chargement {
+  height: 100px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background: #9356dc;
+  transform-origin: left;
+  transform: scaleX(0.5);
+  animation: chargement 2000ms 150ms both;
+}
+
+.containerindex {
+  animation: containerindex 0ms 2150ms both;
+}
+
 /*HEADER*/
 header {
   height: 65px;
@@ -308,10 +405,6 @@ main {
 }
 
 /*Positionnement des coeurs*/
-/*input {
-    position: absolute;
-    left: -9999px;
-    }*/
 .coeur {
   margin-top: -58px;
   margin-left: 89.6%;
@@ -373,7 +466,8 @@ main {
   width: 2.5em;
   border-bottom: 3px solid #99e2d0;
 }
-.secmenu div {
+
+.recette {
   margin-left: 4%;
   margin-right: 4%;
   margin-top: 15px;
@@ -382,50 +476,59 @@ main {
   background: #ffffff;
   border-radius: 25px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
 }
-.secmenu div > * {
+.recette > * {
+  height: 68px;
+}
+.recette__detail {
+  display: flex;
   margin-left: 4%;
-  margin-right: 4%;
+  width: 72.5%;
+  flex-direction: column;
+  justify-content: center;
 }
-.secmenu div h3 {
+.recette__detail h3 {
   font-size: 1em;
   width: 92%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.secmenu div p {
+.recette__detail p {
   font-size: 0.9em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.secmenu div .prix {
-  font-weight: bold;
-  text-align: end;
+.recette__prix {
   width: 7%;
+  margin-right: 4%;
+  font-weight: bold;
+  text-align: right;
 }
-
-@keyframes transition {
-  0% {
-    margin-top: 30px;
-    opacity: 0;
-  }
-  100% {
-    margin-top: 15px;
-    opacity: 1;
-  }
+.recette__prix p {
+  margin-top: 37px;
 }
-.entrees div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 0.5s forwards;
+.recette__choix {
+  display: none;
 }
-
-.plats div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 1.5s forwards;
+.recette:hover > .recette__choix {
+  background: #99e2d0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: cocheverte 800ms forwards;
 }
-
-.desserts div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 2.5s forwards;
+.recette:hover > .recette__choix i {
+  padding: 5px;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #99e2d0;
 }
 
 /*# sourceMappingURL=style.css.map */

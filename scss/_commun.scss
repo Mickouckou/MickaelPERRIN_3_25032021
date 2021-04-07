@@ -3,10 +3,10 @@
     margin:0; padding:0;
     }
 .container {
-    /*width: 375px;*/
+    background:$couleurblanc;
     min-width: 300px;
     max-width: 767px;
-    background:$couleurblanc;
+    width:100%;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size:1em;
@@ -77,23 +77,17 @@ button{
         bottom: 0;  
         left: 0;
         background:-webkit-linear-gradient($couleurpri, $couleursec);
-        background-clip: text;
+        //background-clip: text;
+        -moz-background-clip: text;
         -webkit-background-clip: text;
+        -o-background-clip: text;
+        -ms-background-clip: text;
         color: transparent;
         opacity: 0;
         z-index: -1;
         transition: opacity 500ms;
         }
     }
-/*input:checked + label {
-    background:-webkit-linear-gradient($couleurpri, $couleursec);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-    & .fas {
-        opacity: 1;
-        }
-    }*/
 
 /*FOOTER*/
 footer{
