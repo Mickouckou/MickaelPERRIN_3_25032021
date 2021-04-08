@@ -30,6 +30,8 @@ header{
     z-index: 1;
     img{
         width:44%;
+        @include tablette{width:30%;}
+        @include ordinateur{width:16%;}
         }
     }
 
@@ -44,7 +46,17 @@ header{
         margin:3%;
         }
     }
-    
+
+/*Section Présentation et fonctionnement*/
+@include ordinateur{
+    .presfonc{
+        display: flex;
+        justify-content: flex-start; align-items: center;
+        }
+    .presentation, .fonctionnement{
+        width:50%;
+        }
+    }
 /*Section présentation*/
 .presentation{
     height:285px;
@@ -77,6 +89,9 @@ header{
         background:#f6f6f6;
         display: flex;
         justify-content: flex-start; align-items: center;
+        @include tablette{
+            margin-left: 12%; margin-right: 12%;
+            }
         & .nb{
             position: relative;
             left:-3.6%;
@@ -107,12 +122,30 @@ header{
 main{
     height:1225px;
     background:$couleurfond;
+    @include tablette{
+        height:auto;
+        padding-bottom: 40px;
+        }
+    @include ordinateur{
+        height:auto;
+        padding-bottom: 40px;
+        }
     }
 .restaurants{
     padding-top: 55px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;            
+    @include tablette{
+        flex-direction: row; flex-wrap: wrap;
+        justify-content: space-between;
+        h2{width:90%;}
+        }
+    @include ordinateur{
+        flex-direction: row; flex-wrap: wrap;
+        justify-content: space-between;
+        h2{width:90%;}
+        }
     h2{
         margin-bottom: 25px;
         }
@@ -123,6 +156,12 @@ main{
         margin-bottom: 15px;
         box-shadow: 4px 4px 20px #ccc;
         cursor:pointer;
+        @include tablette{
+            width:47%;
+            }
+        @include ordinateur{
+            width:23%;
+            }
         }
     img{
         border-top-left-radius: 25px; border-top-right-radius: 25px;
@@ -155,6 +194,9 @@ main{
         color:darken($color: $couleurter, $amount: 40);
         display: flex;
         justify-content: center; align-items: center;
+        @include ordinateur{
+            font-size:0.9em;
+            }
         }
     }
 /*Positionnement des coeurs*/
@@ -163,4 +205,7 @@ main{
     margin-left:89.6%;
     font-size: 1.6em;
     font-weight: normal;
+    @include ordinateur{
+        margin-left: 85%;
+        }
     }

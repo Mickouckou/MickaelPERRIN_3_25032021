@@ -4,8 +4,6 @@
     }
 .container {
     background:$couleurblanc;
-    min-width: 300px;
-    max-width: 767px;
     width:100%;
     margin: auto;
     font-family: 'Roboto', sans-serif;
@@ -22,6 +20,16 @@ a{
 footer>*, .restaurants, .mainmenu>div, .secmenu>h2{
     margin-left: 5.33%; margin-right: 5.33%;
     }
+@mixin tablette {
+    @media screen and (min-width: map-get($breakpoints, tablette)) and (max-width: map-get($breakpoints, ordinateur)){
+        @content;
+        }
+    }
+@mixin ordinateur{
+    @media screen and (min-width: map-get($breakpoints, ordinateur)){
+        @content;
+        }
+    }
 
 /*Boutons et leur animation*/
 button{
@@ -36,6 +44,8 @@ button{
     z-index: 1;
     box-shadow: 2px 2px 8px grey;
     cursor:pointer;
+    @include tablette{width:40%; padding:3%; font-size: 1.2em;}
+    @include ordinateur{width:30%; padding:2%; font-size: 1.3em;}
     &:hover {
         border-radius: 25px;
         &::after {

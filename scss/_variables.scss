@@ -8,3 +8,8 @@ $couleurfond:#f6f6f6;
 $duree-chargement: 2000ms;
 $delai-chargement: 150ms;
 $delaicontainerindex: $duree-chargement + $delai-chargement;
+
+$breakpoints: (
+    tablette: 767px,
+    ordinateur : 1200px
+    );

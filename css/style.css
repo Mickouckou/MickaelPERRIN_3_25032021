@@ -88,8 +88,6 @@
 
 .container {
   background: #ffffff;
-  min-width: 300px;
-  max-width: 767px;
   width: 100%;
   margin: auto;
   font-family: "Roboto", sans-serif;
@@ -125,6 +123,20 @@ button {
   z-index: 1;
   box-shadow: 2px 2px 8px grey;
   cursor: pointer;
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  button {
+    width: 40%;
+    padding: 3%;
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  button {
+    width: 30%;
+    padding: 2%;
+    font-size: 1.3em;
+  }
 }
 button:hover {
   border-radius: 25px;
@@ -257,6 +269,16 @@ header {
 header img {
   width: 44%;
 }
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  header img {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header img {
+    width: 16%;
+  }
+}
 
 .lieu {
   position: relative;
@@ -272,6 +294,18 @@ header img {
   margin: 3%;
 }
 
+/*Section Présentation et fonctionnement*/
+@media screen and (min-width: 1200px) {
+  .presfonc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .presentation, .fonctionnement {
+    width: 50%;
+  }
+}
 /*Section présentation*/
 .presentation {
   height: 285px;
@@ -316,6 +350,12 @@ header img {
   justify-content: flex-start;
   align-items: center;
 }
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .fonctionnement div {
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+}
 .fonctionnement div .nb {
   position: relative;
   left: -3.6%;
@@ -348,12 +388,44 @@ main {
   height: 1225px;
   background: #f6f6f6;
 }
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  main {
+    height: auto;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main {
+    height: auto;
+    padding-bottom: 40px;
+  }
+}
 
 .restaurants {
   padding-top: 55px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .restaurants h2 {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .restaurants h2 {
+    width: 90%;
+  }
 }
 .restaurants h2 {
   margin-bottom: 25px;
@@ -365,6 +437,16 @@ main {
   margin-bottom: 15px;
   box-shadow: 4px 4px 20px #ccc;
   cursor: pointer;
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .restaurants figure {
+    width: 47%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants figure {
+    width: 23%;
+  }
 }
 .restaurants img {
   border-top-left-radius: 25px;
@@ -403,6 +485,11 @@ main {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1200px) {
+  .restaurants .nouveau {
+    font-size: 0.9em;
+  }
+}
 
 /*Positionnement des coeurs*/
 .coeur {
@@ -410,6 +497,11 @@ main {
   margin-left: 89.6%;
   font-size: 1.6em;
   font-weight: normal;
+}
+@media screen and (min-width: 1200px) {
+  .coeur {
+    margin-left: 85%;
+  }
 }
 
 /*Importation de scss des pages de menu*/
@@ -420,11 +512,33 @@ main {
   position: relative;
   left: -21.33%;
 }
+@media screen and (min-width: 1200px) {
+  .header a {
+    left: -35%;
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .header a {
+    left: -28%;
+    font-size: 1.1em;
+  }
+}
 
 .imgmenu {
   height: 255px;
   position: relative;
   z-index: 1;
+}
+@media screen and (min-width: 1200px) {
+  .imgmenu {
+    display: none;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .imgmenu {
+    height: 400px;
+  }
 }
 
 /*Section principale détail des menus*/
@@ -436,6 +550,22 @@ main {
   height: auto;
   position: relative;
   z-index: 2;
+}
+@media screen and (min-width: 1200px) {
+  .mainmenu {
+    margin-top: 0px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .mainmenu > div {
+    width: 90%;
+  }
+  .mainmenu .entrees {
+    margin-left: 4%;
+  }
+  .mainmenu .desserts {
+    margin-right: 4%;
+  }
 }
 .mainmenu h1 {
   font-family: Shrikhand;
@@ -466,6 +596,11 @@ main {
   width: 2.5em;
   border-bottom: 3px solid #99e2d0;
 }
+@media screen and (min-width: 1200px) {
+  .secmenu {
+    width: 30%;
+  }
+}
 
 .recette {
   margin-left: 4%;
@@ -488,6 +623,11 @@ main {
   width: 72.5%;
   flex-direction: column;
   justify-content: center;
+}
+@media screen and (min-width: 1200px) {
+  .recette__detail {
+    width: 68%;
+  }
 }
 .recette__detail h3 {
   font-size: 1em;
