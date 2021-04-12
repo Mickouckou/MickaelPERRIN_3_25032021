@@ -48,6 +48,9 @@ header{
     }
 
 /*Section Présentation et fonctionnement*/
+.cacher{
+    display:none;
+    }
 @include ordinateur{
     .presfonc{
         display: flex;

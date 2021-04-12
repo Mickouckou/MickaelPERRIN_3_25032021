@@ -81,7 +81,7 @@
     margin-left: 4%; margin-right: 4%; margin-top: 15px;
     width:92%; height:68px;
     background:$couleurblanc;
-    border-radius: 25px;
+    border-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,8 +125,8 @@
     &:hover {
         & > .recette__choix {
             background: $couleurter;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
             height:68px;
             display: flex;
             justify-content: center;

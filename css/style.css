@@ -114,8 +114,7 @@ button {
   border-radius: 25px;
   border: 0;
   padding: 4%;
-  width: 57.87%;
-  font-weight: bold;
+  width: 60%;
   font-size: 1.1em;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: #ffffff;
@@ -295,6 +294,10 @@ header img {
 }
 
 /*Section Présentation et fonctionnement*/
+.cacher {
+  display: none;
+}
+
 @media screen and (min-width: 1200px) {
   .presfonc {
     display: flex;
@@ -609,7 +612,7 @@ main {
   width: 92%;
   height: 68px;
   background: #ffffff;
-  border-radius: 25px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -656,8 +659,8 @@ main {
 }
 .recette:hover > .recette__choix {
   background: #99e2d0;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   height: 68px;
   display: flex;
   justify-content: center;
