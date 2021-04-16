@@ -18,7 +18,7 @@
         animation-timing-function: cubic-bezier(.25,0,0.25,1);
         }
     85%,100% {
-            opacity: 1;
+        opacity: 1;
         }
     100% {
         transform: scaleX(1);
@@ -40,7 +40,7 @@
     0%   { margin-top: 30px; opacity:0; }
     100% { margin-top: 15px; opacity:1; }
     }
-.entrees{
+/*.entrees{
     >div {opacity:0;animation: transition 2s ease-in-out 0.5s forwards;}
     }
 .plats{
@@ -48,21 +48,45 @@
     }
 .desserts{
     >div {opacity:0;animation: transition 2s ease-in-out 2.5s forwards;}
-    }
+    }*/
 
 /*Apparition de la coche verte si on survole un plat*/
+//Diminution de la largeur de recette__detail
+@keyframes cochedetail{
+    from {
+        width:85%;
+        }
+   to {
+        width:68.5%;
+        }
+    }
+//Décalage vers la gauche de recette__coche
 @keyframes cocheverte {
-    0% {
-        transform: scaleX(0);
-        width:0%;
-        opacity:0;
+   from {
+        transform: translateX(0);
         }
-    50%{
-        opacity:0.2;
-    }
-    100% {
-        transform: scaleX(1);
-        width:16.5%;
-        opacity:1;
+   to {
+        transform: translateX(-100%);
         }
     }
+//Décalage vers la gauche de recette__prix
+@keyframes cocheprix {
+   from {
+        transform: translateX(0);
+        }
+   to {
+        transform: translateX(-223%);
+        }
+    }
+//Rotation à l'intérieur de la coche
+@keyframes rotation {
+   0% {
+        transform: rotate(0);
+        }
+    30%{
+        transform: rotate(0);
+        }
+   100% {
+        transform: rotate(360deg);
+        }
+   }

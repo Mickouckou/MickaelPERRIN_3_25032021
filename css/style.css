@@ -48,35 +48,49 @@
     opacity: 1;
   }
 }
-.entrees > div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 0.5s forwards;
-}
-
-.plats > div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 1.5s forwards;
-}
-
-.desserts > div {
-  opacity: 0;
-  animation: transition 2s ease-in-out 2.5s forwards;
-}
-
+/*.entrees{
+    >div {opacity:0;animation: transition 2s ease-in-out 0.5s forwards;}
+    }
+.plats{
+    >div {opacity:0;animation: transition 2s ease-in-out 1.5s forwards;}
+    }
+.desserts{
+    >div {opacity:0;animation: transition 2s ease-in-out 2.5s forwards;}
+    }*/
 /*Apparition de la coche verte si on survole un plat*/
-@keyframes cocheverte {
-  0% {
-    transform: scaleX(0);
-    width: 0%;
-    opacity: 0;
+@keyframes cochedetail {
+  from {
+    width: 85%;
   }
-  50% {
-    opacity: 0.2;
+  to {
+    width: 68.5%;
+  }
+}
+@keyframes cocheverte {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes cocheprix {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-223%);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(0);
   }
   100% {
-    transform: scaleX(1);
-    width: 16.5%;
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 /*Importation des parties communes*/
@@ -589,6 +603,21 @@ main {
   padding-bottom: 50px;
 }
 
+.entrees > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 0.5s forwards;
+}
+
+.plats > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 1.5s forwards;
+}
+
+.desserts > div {
+  opacity: 0;
+  animation: transition 2s ease-in-out 2.5s forwards;
+}
+
 /*Détail d'une section de la carte ENTREES PLATS DESSERTS*/
 .secmenu h2 {
   margin-top: 40px;
@@ -606,6 +635,7 @@ main {
 }
 
 .recette {
+  position: relative;
   margin-left: 4%;
   margin-right: 4%;
   margin-top: 15px;
@@ -614,8 +644,9 @@ main {
   background: #ffffff;
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
 .recette > * {
   height: 68px;
@@ -623,29 +654,27 @@ main {
 .recette__detail {
   display: flex;
   margin-left: 4%;
-  width: 72.5%;
+  width: 85%;
   flex-direction: column;
   justify-content: center;
 }
-@media screen and (min-width: 1200px) {
-  .recette__detail {
-    width: 68%;
-  }
-}
 .recette__detail h3 {
+  width: 100%;
   font-size: 1em;
-  width: 92%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .recette__detail p {
+  width: 100%;
   font-size: 0.9em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 .recette__prix {
+  position: absolute;
+  left: 89%;
   width: 7%;
   margin-right: 4%;
   font-weight: bold;
@@ -655,9 +684,9 @@ main {
   margin-top: 37px;
 }
 .recette__choix {
-  display: none;
-}
-.recette:hover > .recette__choix {
+  position: absolute;
+  left: 100%;
+  width: 16.5%;
   background: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -665,13 +694,24 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: cocheverte 800ms forwards;
 }
-.recette:hover > .recette__choix i {
+.recette__choix i {
   padding: 5px;
   border-radius: 25px;
   background: #ffffff;
   color: #99e2d0;
+}
+.recette:hover > .recette__detail {
+  animation: cochedetail 800ms forwards;
+}
+.recette:hover > .recette__prix {
+  animation: cocheprix 800ms forwards;
+}
+.recette:hover > .recette__choix {
+  animation: cocheverte 800ms forwards;
+}
+.recette:hover > .recette__choix i {
+  animation: rotation 800ms forwards;
 }
 
 /*# sourceMappingURL=style.css.map */

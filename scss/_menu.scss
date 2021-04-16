@@ -63,6 +63,16 @@
         }
     }
 
+    .entrees{
+        >div {opacity:0;animation: transition 2s ease-in-out 0.5s forwards;}
+        }
+    .plats{
+        >div {opacity:0;animation: transition 2s ease-in-out 1.5s forwards;}
+        }
+    .desserts{
+        >div {opacity:0;animation: transition 2s ease-in-out 2.5s forwards;}
+        }
+
 /*Détail d'une section de la carte ENTREES PLATS DESSERTS*/
 .secmenu{
     h2{
@@ -78,33 +88,33 @@
         }
     }
 .recette{
+    position:relative;
     margin-left: 4%; margin-right: 4%; margin-top: 15px;
     width:92%; height:68px;
     background:$couleurblanc;
     border-radius: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
     >*{
         height:68px;
         } 
     &__detail{   
         display: flex;
         margin-left: 4%;
-        width:72.5%;
+        width:85%;
         flex-direction: column;
         justify-content: center;
-        @include ordinateur{
-            width : 68%;
-            }
         h3{
+            width:100%;
             font-size: 1em;
-            width:92%;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
             }
         p{
+            width:100%;
             font-size: 0.9em;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -112,6 +122,8 @@
             }
         }
     &__prix{
+        position: absolute;
+        left:89%;
         width:7%; margin-right: 4%;
         font-weight: bold;
         text-align: right;
@@ -120,10 +132,9 @@
             }
         }
     &__choix{
-        display: none;
-        }
-    &:hover {
-        & > .recette__choix {
+        position:absolute;
+            left:100%;
+            width:16.5%;
             background: $couleurter;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
@@ -137,7 +148,19 @@
                 background: $couleurblanc;
                 color: $couleurter;
                 }
+        }
+    &:hover {
+        & > .recette__detail{
+            animation: cochedetail 800ms forwards;
+            }
+        & > .recette__prix{
+            animation: cocheprix 800ms forwards;
+            } 
+        & > .recette__choix {
             animation: cocheverte 800ms forwards;
+            i{
+                animation: rotation 800ms forwards;        
+                }
             }
         }
     }
